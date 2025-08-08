@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inscription pour le test</title>
+	<style>
+		.entete{
+			display: flex;
+			align-items: center;
+			padding: 10px;
+		}
+		.logo{
+			display: inline-block;
+			vertical-align: middle;
+			height: 100px;
+			width: 100px;
+		}
+		.affiche{
+			font-size: 50px;
+			border: 3px solid green;
+			display: inline-block;
+			margin-left: 10px;
+			vertical-align: middle;
+		}
+		nav{
+			overflow: hidden;
+			font-family: Arial,sans-serif;
+			display: flex;
+			justify-content: space-between;
+			background-color: #2F6FA5;
+			align-items: center;
+			height: 100px;
+
+		}
+		.sous_entete{
+			text-align: center;
+			font-size: 40px;
+		}
+		nav a{
+			flex: 1;
+			float: left;
+			display: block;
+			text-align: center;
+			padding: 16px 24px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+		nav a:hover{
+			background-color: #1C4F7A;
+		}
+		.presentation{
+			text-transform: uppercase;
+			text-align: center;
+		}
+		.pre_groupe{
+			text-align: center;
+			background-color: #EA05A0;
+			opacity: 0.8;
+			font-size: 1rem;
+			font-weight: bold;
+			height: 100px;
+			margin-bottom: 1em;
+		}
+		.content {
+			display: none;
+		}
+		.content.active {
+			display: block;
+		}
+		.tt{
+			font-style: oblique;
+		}
+		.presentation {
+			background-color: #00FF00;
+		}
+		p{
+			position: static;
+		}
+	</style>
+</head>
+<body>
+	<div class="entete">
+		<img src="photo.jpg" alt="Nous voici " class="logo" />
+		<h1 class="affiche">INSCRIPTION POUR LE TEST DE RECRUTEMENT DU GROUPE NE CROYEZ PAS MAIS PENSEZ</h1>
+	</div>
+	<h2 class="sous_entete">Année : 2025-2026</h2>
+	<nav>
+		<a onclick="showSection('accueil')">Accueil</a>
+		<a onclick="showSection('inscrire')">S'inscrire</a>
+	</nav>
+	<div id="accueil" class="content active">
+		<h2 class="presentation">Test d'entrée dans le groupe d'étude NE CROYEZ PAS MAIS PENSEZ </h2>
+		<p class="pre_groupe">Ce test vise à repérer les talents issus de milieux modestes, qui, malgré des conditions difficiles, démontrent une forte motivation et un réel potentiel de réussite. A travers ce groupe, nous souhaitons leur offrir un accompagnement adapté pour les aidé à atteindre leur objectifs.  </p>
+		<div class="expl_platf">
+			<h1 class="tt">Comment utiliser cette plateforme</h1>
+			<p class="bvd">Cette plateforme est réservée pour l'inscription au test obligatoire d'entrée dans le groupe d'étude NE CROYEZ PAS MAIS PENSEZ .Les conditions à remplir pour ce test sont :</p>
+			<ul>
+				<li>Etre un élève de la classe de troisième ou de la classe de terminale pour le compte de l'année 2025-2026</li>
+				<li>Etre dans l'un des départements de l'OUEME ou du PLATEAU pour cause de la distance</li>
+			</ul>
+			<p class="donner">Les données à fourni pour votre inscription sont les suivantes :</p>
+			<ul>
+				<li>Votre identifiant (Nom ,Prénom ,Sexe , âge)</li>
+				<li>Numéro à contacter (Numéro fonctionnel de papa ou maman ou titeur/titrice)</li>
+				<li>Les frais d'inscription</li>
+			</ul>
+		</div>
+	</div>
+	<div id="inscrire" class='content'>
+		<h2 class="presentation">Test d'entrée dans le groupe d'étude NE CROYEZ PAS MAIS PENSEZ </h2>
+		<p class="bvd">Insrivez-vous maintenant</p>
+		<form id="form-inscription">
+			<label for="Nom">Entrez votre nom :</label>
+  <input type="text" name="Nom" placeholder="ex : KEKE" required><br>
+  	<label for="Prénoms">Entrez vos prénoms :</label>
+  <input type="text" name="Prénom" placeholder="Antoine Mahougnon" required><br><br>
+  <label>
+  	<input type="radio" name="genre" value="homme" required> homme</label>
+  <label><input type="radio" name="genre" value="femme"> Femme</label><br>
+
+  <br><br>
+		<label for="age">Sélectionner votre âge :</label>
+		<select name="age" id="age" required>
+			<option value="9 ans">09 ans</option>
+			<option value="10 ans">10 ans</option>
+			<option value="11 ans">11 ans</option>
+			<option value="12 ans">12 ans</option>
+			<option value="13 ans">13 ans</option>
+			<option value="14 ans">14 ans</option>
+			<option value="15 ans">15 ans</option>
+			<option value="16 ans">16 ans</option>
+			<option value="17 ans">17 ans</option>
+			<option value="18 ans">18 ans</option>
+			<option value="19 ans">19 ans</option>
+			<option value="20 ans">20 ans</option>
+			<option value="21 ans">21 ans</option>
+		</select>
+		<br><br>
+
+  <label for="Classe">Choisissez votre classe<label><br><br>
+  	<input type="radio" name="classe" value="troisième" required> Troisième</label><br>
+  	<input type="radio" name="classe" value="terminale"> Terminale</label><br><br>
+  	<label for="numéro">Entrez votre contact :</label>
+
+  <input type="tel" name="numéro" placeholder="Numéro" required><br>
+
+  <button type="submit">Procéder au paiement</button>
+</form>
+	
+	<script>
+		function showSection(id) {
+  const sections = document.querySelectorAll('.content');
+  sections.forEach(section => section.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  		}
+  		function redirigerPaiement(event) {
+  			event.preventDefault();
+  			const choix =document.getElementById("choix").value;
+  			const liens={
+  				"troisième":"https://direct.kkiapay.me/34575/Inscription%20pour%20le%20test%20du%20groupe%20Ne%20Croyez%20Pas%20Mais%20Pensez%20-24I-k7hfA",
+  				"terminale":"https://direct.kkiapay.me/34575/Inscription%20pour%20le%20test%20du%20groupe%20Ne%20Croyez%20Pas%20Mais%20Pensez%20-cnbxY1E7U"
+  			};
+  			if (choix && liens[choix]) {
+  				window.open (liens[choix],'_blank');
+  			} else {
+  				alert("Choix invalide. Veuiller choisir la classe avant de continuer.");
+  			}
+  		}
+document.getElementById("form-inscription").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  // Envoie à Formspree
+  const response = await fetch("https://formspree.io/f/xgvzpban", {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    // Récupère la classe pour redirection
+    const classe = data.get("classe");
+
+    const liensPaiement = {
+      "troisième": "https://direct.kkiapay.me/34575/Inscription%20pour%20le%20test%20du%20groupe%20Ne%20Croyez%20Pas%20Mais%20Pensez%20-24I-k7hfA", 
+      "terminale": "https://direct.kkiapay.me/34575/Inscription%20pour%20le%20test%20du%20groupe%20Ne%20Croyez%20Pas%20Mais%20Pensez%20-cnbxY1E7U"
+    };
+
+    const lien = liensPaiement[classe];
+    if (lien) {
+      window.location.href = lien;
+    } else {
+      alert("Erreur : classe inconnue pour le paiement.");
+    }
+  } else {
+    alert("Erreur lors de l'envoi du formulaire. Veuillez réessayer.");
+  }
+});
+
+	</script>
+</body>
+</html>
+
+
